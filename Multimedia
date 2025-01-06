@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Webpage with Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Our Multimedia Page</h1>
+
+    <h2>Listen to Our Audio</h2>
+    <audio controls>
+        <source src="audiofile.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h2>Watch Our Video</h2>
+    <video width="640" height="360" controls>
+        <source src="videofile.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h2>Registration Form</h2>
+    <form id="registration-form">
+        <label for="username">Username (required):</label>
+        <input type="text" id="username" name="username" required placeholder="Enter your username">
+
+        <label for="email">Email (required):</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+        <label for="password">Password (required):</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+        <label for="confirm-password">Confirm Password (required):</label>
+        <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+
+        <label for="user-type">User Type:</label>
+        <select id="user-type" name="user-type">
+            <option value="regular">Regular User</option>
+            <option value="admin">Admin</option>
+        </select>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        // Example validation script (basic)
+        document.getElementById('registration-form').onsubmit = function() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        };
+    </script>
+
+</body>
+</html>
